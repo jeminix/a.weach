@@ -1,5 +1,5 @@
 """
-WSGI config for A.Weach project.
+WSGI config for A.weach project.
 
 This module contains the WSGI application used by Django's development server
 and any production WSGI deployments. It should expose a module-level variable
