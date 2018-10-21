@@ -1,16 +1,13 @@
-$bg-color: red;
-
 .App {
   text-align: center;
-	color: $bg-color;
 }
 
-.App__logo {
+.App-logo {
   animation: App-logo-spin infinite 20s linear;
   height: 40vmin;
 }
 
-.App__header {
+.App-header {
   background-color: #282c34;
   min-height: 100vh;
   display: flex;
@@ -21,7 +18,7 @@ $bg-color: red;
   color: white;
 }
 
-.App__link {
+.App-link {
   color: #61dafb;
 }
 
