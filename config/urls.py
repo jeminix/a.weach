@@ -4,15 +4,9 @@ from django.conf.urls.static import static
 from django.contrib import admin
 from django.views.generic import TemplateView
 from django.views import defaults as default_views
-from aweach import views
+from aweach import views as aweach_views
 
 urlpatterns = [
-    path("", TemplateView.as_view(template_name="pages/home.html"), name="home"),
-    path(
-        "about/",
-        TemplateView.as_view(template_name="pages/about.html"),
-        name="about",
-    ),
     # Django Admin, use {% url 'admin:index' %}
     path(settings.ADMIN_URL, admin.site.urls),
     # User management
@@ -21,11 +15,11 @@ urlpatterns = [
         include("aweach.users.urls", namespace="users"),
     ),
     path("accounts/", include("allauth.urls")),
-    
+
     # Your stuff: custom urls includes go here
-    
+
     #re_path(r"^", views.ReactAppView.as_view()),
-    path("", views.ReactAppView.as_view()),
+    path("", aweach_views.ReactAppView.as_view()),
 
     ] + static( settings.MEDIA_URL, document_root=settings.MEDIA_ROOT )
 
