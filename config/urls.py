@@ -10,18 +10,15 @@ urlpatterns = [
     # Django Admin, use {% url 'admin:index' %}
     path(settings.ADMIN_URL, admin.site.urls),
     # User management
-    path(
-        "users/",
-        include("aweach.users.urls", namespace="users"),
-    ),
+    path("users/", include("aweach.users.urls", namespace="users")),
     path("accounts/", include("allauth.urls")),
 
     # Your stuff: custom urls includes go here
 
-    #re_path(r"^", views.ReactAppView.as_view()),
     path("", aweach_views.ReactAppView.as_view()),
+    path("images/", include("aweach.images.urls", namespace="images")),
 
-    ] + static( settings.MEDIA_URL, document_root=settings.MEDIA_ROOT )
+    ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
 
 if settings.DEBUG:
     # This allows the error pages to be debugged during development, just visit
